@@ -22,7 +22,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 // -------------------------------------------------- //
 // Variables
 // -------------------------------------------------- //
-var accessToken
 var clientID = config.CLIENT_ID
 var clientSecret = config.CLIENT_SECRET
 var redirectURI = config.HOSTPATH + ":" + config.PORT + config.REDIRECT_PATH
