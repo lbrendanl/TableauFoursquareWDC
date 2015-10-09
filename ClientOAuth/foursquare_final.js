@@ -81,7 +81,6 @@ var myConnector = tableau.makeConnector();
 // only called when running inside the simulator or tableau
 myConnector.init = function() {
     var accessToken = parseAccessToken();
-    console.log("Access token is '" + accessToken + "'");
     var hasAuth = (accessToken && accessToken.length > 0) || tableau.password.length > 0;
     updateUIWithAuthState(hasAuth);
 
