@@ -76,6 +76,11 @@
   // Init function for connector, called during every phase but
   // only called when running inside the simulator or tableau
   myConnector.init = function() {
+      // If we are in the auth phase we only want to show the UI needed for auth
+      if (tableau.phase == tableau.phaseEnum.authPhase) {
+        $("#getvenuesbutton").css('display', 'none');
+      }
+      
       var accessToken = parseAccessToken();
       var hasAuth = (accessToken && accessToken.length > 0) || tableau.password.length > 0;
       updateUIWithAuthState(hasAuth);
