@@ -90,6 +90,12 @@
       if (tableau.phase == tableau.phaseEnum.interactivePhase || tableau.phase == tableau.phaseEnum.authPhase) {
           if (hasAuth) {
               tableau.password = accessToken;
+              
+              if (tableau.phase == tableau.phaseEnum.authPhase) {
+                // Auto-submit here if we are in the auth phase
+                tableau.submit()
+              }
+              
               return;
           }
       }
